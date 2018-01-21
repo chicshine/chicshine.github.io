@@ -1141,7 +1141,7 @@
 				var mapElement = document.getElementById(id);
 				// Create the Google Map using our element and options defined above
 				var map = new google.maps.Map(mapElement, mapOptions);
-				var image = 'assets/images/map-marker.png';
+				var image = '/assets/images/map-marker.png';
 				// Let's also add a marker while we're at it
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(lat, lng),
