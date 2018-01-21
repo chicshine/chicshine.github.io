@@ -20,12 +20,12 @@ layout: default
             <div class="row">
                 <div class="col-md-9 aside">
                     <article class="blog-post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-                        <div class="post-image">
+                        <!-- <div class="post-image">
                             <a href="blog-post-page.html"><img src="/assets/images/blog/blog-post-img-4.jpg" alt=""></a>
-                        </div>
+                        </div> -->
                         <ul class="post-meta">
                             <li class="post-meta-date">{{ page.date | date: "%-d %b, %Y" }}</li>
-                            <li class="post-meta-reviews"><i class="icon icon-speech-bubble"></i><span>3</span></li>
+                            <!-- <li class="post-meta-reviews"><i class="icon icon-speech-bubble"></i><span>3</span></li> -->
                         </ul>
                         <header>
                             <h2 class="post-title">{{ page.title }}</h2>
@@ -45,49 +45,27 @@ layout: default
                         </div>
 
                     </article>
-                    <div class="comments-block">
-                        <h2>Comments</h2>
-                        <div class="comment">
-                            <div class="userpic"><span class="icon icon-user"></span></div>
-                            <div class="text">
-                                <div class="meta"><span class="meta-author">by Paul Johnson</span><span class="meta-date">16 December, 2017</span></div>
-                                <p>Do you ever casually go about your day, popping into the kitchen for a little peanut butter toast and then the next thing you know you're turning over the toaster oven because it's been so long and you just can't take the crumbs anymore? </p>
-                                <a href="#" class="reply">Reply</a>
-                            </div>
-                        </div>
-                        <div class="comment replay">
-                            <div class="userpic"><span class="icon icon-user"></span></div>
-                            <div class="text">
-                                <div class="meta"><span class="meta-author">by Paul Johnson</span><span class="meta-date">16 December, 2017</span></div>
-                                <p>Yeah. For a steady stream of cleaning, one that keeps your kitchen cleaning itself, so to speak, try the "good enough" approach, punctuated by one deeper clean every week or so.</p>
-                                <a href="#" class="reply">Reply</a>
-                            </div>
-                        </div>
+
+                    {% if page.comments and site.show_comments == 1 %}
+                    <div class="comments-block" role="complementary">
+                        <div id="disqus_thread"></div>
+                        <script>
+                            var disqus_config = function () {
+                                this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.url }}';
+                                this.page.identifier = '{{page.url}}';
+                                this.page.title = '{{ page.title }}';
+                            };
+                            (function() {
+                                var d = document, s = d.createElement('script');
+                    
+                                s.src = '//{{site.disqus}}.disqus.com/embed.js';
+                    
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
                     </div>
-                    <div class="divider-lg"></div>
-                    <h2>Leave a Comment</h2>
-                    <form class="contact-form comment-form" name="commentform" method="post" novalidate="novalidate">
-                        <div class="inputs-col">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-wrapper">
-                                        <input type="text" class="input-custom input-full" name="name" placeholder="Your name*">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-wrapper">
-                                        <input type="text" class="input-custom input-full" name="email" placeholder="Email*">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-wrapper">
-                            <textarea class="textarea-custom input-full" name="message" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-border">Send Message</button>
-                    </form>
+                    {% endif %}
                     <div class="divider divider-lg"></div>
                 </div>
                 <div class="col-md-3 aside">
