@@ -1,4 +1,18 @@
-
+<div class="side-block">
+    <h3>Latest Posts</h3>
+    {% for post in site.posts %}
+        <div class="blog-post post-preview">
+            <!-- <div class="post-image">
+                <a href="blog-post-page.html"><img src="/assets/images/blog/blog-post-featured-1.jpg" alt=""></a>
+            </div> -->
+            <ul class="post-meta">
+                <li class="post-meta-date">{{ post.date | date: "%-d %B, %Y" }}</li>
+                <!-- <li class="pull-right post-meta-reviews"><i class="icon icon-speech-bubble"></i><span>3</span></li> -->
+            </ul>
+            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+        </div>
+    {% endfor %}
+</div>
 <div class="side-block">
     <h3>Post Categories</h3>
     <ul class="category-list">
@@ -18,19 +32,4 @@
             {% endfor %}
         {% endfor %}
     </ul>
-</div>
-<div class="side-block">
-    <h3>Featured Posts</h3>
-    {% for post in site.posts %}
-        <div class="blog-post post-preview">
-            <!-- <div class="post-image">
-                <a href="blog-post-page.html"><img src="/assets/images/blog/blog-post-featured-1.jpg" alt=""></a>
-            </div> -->
-            <ul class="post-meta">
-                <li class="post-meta-date">{{ post.date | date: "%-d %B, %Y" }}</li>
-                <!-- <li class="pull-right post-meta-reviews"><i class="icon icon-speech-bubble"></i><span>3</span></li> -->
-            </ul>
-            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-        </div>
-    {% endfor %}
 </div>

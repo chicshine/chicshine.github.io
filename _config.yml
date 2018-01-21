@@ -43,6 +43,7 @@ social_networks:
 # Modules Settings
 show_categories: 1
 show_tags: 1
+show_authors: 1
 show_email: 1
 show_rss: 1
 show_comments: 1
@@ -51,8 +52,7 @@ fixed_sidebar: 1
 
 # Defaults
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
@@ -67,7 +67,8 @@ include: ["_pages"]
 
 # Outputting
 permalink: /blog/:title.html
-category_dir: categories
+category_dir: blog/categories
+tag_dir: blog/tags
 
 # Pagination
 paginate: 10

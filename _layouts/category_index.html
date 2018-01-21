@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<!-- Breadcrumbs Block -->
+<div class="block breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="{{page.url}}">{{page.title}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //Breadcrumbs Block -->
+
+<div class="block">
+    <h2 class="text-center h-lg h-decor">{{page.title}}</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 aside">
+
+                {% for post in site.posts %}
+                    {% for category in post.categories %}
+                        {% if category == page.category %}
+                        <article class="blog-post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                            <!-- <div class="post-image">
+                                <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"><img src="/assets/images/blog/blog-post-img-1.jpg" alt=""></a>
+                            </div> -->
+                            <ul class="post-meta">
+                                <li class="post-meta-date">
+                                    <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%-d %B, %Y" }}</time>
+                                </li>
+                                <!-- <li class="post-meta-reviews"><i class="icon icon-speech-bubble"></i><span>3</span></li> -->
+                            </ul>
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <div class="post-author">by {{ post.author }}</div>
+                            <div class="post-teaser">
+                                {{ post.excerpt }}
+                    
+                                {% if post.excerpt != post.content %}
+                                    <p><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" role="button">Read More</a></p>
+                                {% endif %}
+                            </div>
+                            <div class="post-read-more"><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="btn">Read Post</a></div>
+                        </article>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+
+                {% if paginator.total_pages > 1 %}
+                <div class="clearfix"></div>
+                <div class="text-center">
+                    <ul class="pagination">
+                        {% if paginator.previous_page %}
+                            <li><a href="{{ paginator.previous_page_path }}" class="previous">&larr; Previous</a></li>
+                        {% endif %}
+                    
+                        <li>Page {{ paginator.page }} of {{ paginator.total_pages }}</li>
+                    
+                        {% if paginator.next_page %}
+                            <li><a href="{{ paginator.next_page_path }}" class="next">Next &rarr;</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+
+            </div>
+            <div class="col-md-3 aside">
+                {% include blog-sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
