@@ -3,13 +3,13 @@
     <div class="page-header-mobile-info">
         <div class="page-header-mobile-info-content">
             <div class="page-header-info">
-                <i class="icon icon-map-marker"></i>Marietta, GA
+                <i class="icon icon-map-marker"></i>{{site.address}}
             </div>
             <div class="page-header-info">
-                <i class="icon icon-technology"></i>404-790-8429
+                <i class="icon icon-technology"></i>{{site.phone}}
             </div>
             <div class="page-header-info">
-                <i class="icon icon-clock"></i>Mon-Fri: 9:00 am – 5:00 pm
+                <i class="icon icon-clock"></i>{{site.hours}}
             </div>
             <div class="page-header-info">
                 <i class="icon icon-speech-bubble"></i><a href="mailto:{{site.email}}">{{site.email}}</a>
@@ -26,14 +26,13 @@
         <div class="container">
             <div class="page-header-mobile-info-toggle"></div>
             <div class="logo">
-                <a href="index.html"><img src="/assets/images/logo.png" alt=""></a>
+                <a href="/"><img src="/assets/images/logo.png" alt=""></a>
                 <div class="shine"></div>
             </div>
             <div class="page-header-top-middle hidden-xs">
-                <div class="page-header-slogan visible-lg">We are Cleaning Experts!</div>
-                <div class="page-header-shedule"><i class="icon icon-clock"></i>8:00am - 10:00pm
-                    <br>Mon - Sun</div>
-                <div class="page-header-phone text-right"><span>Call us on:</span> <span class="phone-number">800-123-4567</span></div>
+                <div class="page-header-slogan visible-lg">{{site.slogan}}</div>
+                <div class="page-header-shedule"><i class="icon icon-clock"></i>{{site.hours}}</div>
+                <div class="page-header-phone text-right"><span>Call us on:</span> <span class="phone-number">{{site.phone}}</span></div>
             </div>
             <div class="quote-button-wrap"><a href="order-form.html" class="btn"><i class="icon icon-bell"></i>GET A QUOTE</a></div>
             <a href="#" class="menu-toggle"><i class="icon-line-menu"></i><i class="icon-cancel"></i></a>

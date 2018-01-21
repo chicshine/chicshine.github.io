@@ -26,11 +26,9 @@
     <meta name="format-detection" content="telephone=no">
     
     {% include styles.html %}
-
     {% include fonts.html %}
-    
     {% if {{site.favicon != blank}} %}
-    <link href="{{ site.favicon }}" rel="shortcut icon" type="image/x-icon" />
+        <link href="{{ site.favicon }}" rel="shortcut icon" type="image/x-icon" />
     {% endif %}
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

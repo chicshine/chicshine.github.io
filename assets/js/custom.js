@@ -14,8 +14,8 @@
 
 				// Google map options
 				googleMapOption = {
-					latitude: 37.36274700000004,
-					longitude: -122.03525300000001,
+					latitude: 33.9982605,
+					longitude: -84.4015072,
 					zoom: 14 // map zoom value
 				},
 

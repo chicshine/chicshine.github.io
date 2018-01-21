@@ -1,12 +1,16 @@
 # General Settings
 name: Chic Shine Cleaning
-description: We love the job that you don't!
+slugan: We love the job that you don't!
 email: kpardo@chicshinecleaning.com
+phone: 404-790-8429
+address: Marietta, GA
+hours: "Mon-Fri: 9:00 am – 5:00 pm"
+copyright: © 2016-2018 Chic Shine Cleaning.
 favicon: /favicon.ico
 twitter_handler: chicshine
 analytics_code: UA-16806593-1
-disqus: chicshinecleaning
-disqus_url: chicshinecleaning.com
+disqus: chicshine
+disqus_url: chicshine.github.io
 
 # Social Accounts
 social_networks:
