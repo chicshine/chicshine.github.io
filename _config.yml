@@ -11,6 +11,7 @@ twitter_handler: chicshine
 analytics_code: UA-16806593-1
 disqus: chicshine
 disqus_url: chicshine.github.io
+google_key: AIzaSyBNypSMIdwBvaE8fjCEVfAuqHbU19U2aWI
 
 # Social Accounts
 social_networks:
@@ -65,7 +66,7 @@ baseurl: ""
 include: ["_pages"]
 
 # Outputting
-permalink: /:categories/:title.html
+permalink: /blog/:title.html
 category_dir: categories
 
 # Pagination

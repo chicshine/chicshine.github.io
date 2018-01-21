@@ -24,7 +24,7 @@ layout: default
                             <a href="blog-post-page.html"><img src="/assets/images/blog/blog-post-img-4.jpg" alt=""></a>
                         </div> -->
                         <ul class="post-meta">
-                            <li class="post-meta-date">{{ page.date | date: "%-d %b, %Y" }}</li>
+                            <li class="post-meta-date">{{ page.date | date: "%-d %B, %Y" }}</li>
                             <!-- <li class="post-meta-reviews"><i class="icon icon-speech-bubble"></i><span>3</span></li> -->
                         </ul>
                         <header>
@@ -37,7 +37,7 @@ layout: default
                             {% if site.show_tags == 1 and page.tags %}
                             <ul class="tags-list">
                                 {% for tag in page.tags %}
-                                <li><a href="{{ site.baseurl | prepend: site.url }}/tag/{{ tag }}">{{ tag }}</a></li>
+                                <li><a href="{{ site.baseurl | prepend: site.url }}/blog/tags/{{ tag }}">{{ tag }}</a></li>
                                 {% endfor %}
                             </ul>
                             {% endif %}
