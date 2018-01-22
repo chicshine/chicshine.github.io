@@ -63,16 +63,16 @@ url: ""
 baseurl: ""
 
 # Includes
-include: ["_pages"]
+include: ["_pages", "blog"]
 
 # Outputting
-permalink: /blog/:title.html
+permalink: /blog/:year/:month/:day/:title.html
 category_dir: blog/categories
 tag_dir: blog/tags
 
 # Pagination
 paginate: 10
-paginate_path: "/page:num/"
+paginate_path: "/blog/page-:num/"
 
 # Conversion
 markdown: kramdown

@@ -16,20 +16,18 @@
 <div class="side-block">
     <h3>Post Categories</h3>
     <ul class="category-list">
-        {% for post in site.posts %}
-            {% for category in post.categories %}
-                <li><a href="/blog/categories/{{category}}">{{category}}</a></li>
-            {% endfor %}
+        {% for category in site.categories | sort %}
+            {% capture category_name %}{{ category | first }}{% endcapture %}
+            <li><a href="/blog/categories/{{category_name}}">{{category_name}}</a></li>
         {% endfor %}
     </ul>
 </div>
 <div class="side-block">
     <h3>Popular tags</h3>
     <ul class="tags-list">
-        {% for post in site.posts %}
-            {% for tag in post.tags %}
-                <li><a href="/blog/tags/{{tag}}">{{tag}}</a></li>
-            {% endfor %}
+        {% for tag in site.tags %}
+            {% capture tag_name %}{{ tag | first }}{% endcapture %}
+            <li><a href="/blog/tags/{{tag_name}}">{{tag_name}}</a></li>
         {% endfor %}
     </ul>
 </div>
