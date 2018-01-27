@@ -33,10 +33,11 @@ permalink: /contacts/
                 <div class="divider"></div>
                 <h5>Look for us on</h5>
                 <ul class="social-list">
-                    <li><a href="#"><i class="icon-google-plus-logo"></i></a></li>
-                    <li><a href="#"><i class="icon-facebook-logo"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter-logo"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram-logo"></i></a></li>
+                    {% for social in site.social_networks %}
+                        {% if social.url != '' %}
+                        <li><a href="{{social.url}}" target="_blank"><i class="icon-{{social.name}}-logo"></i></a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
             <div class="divider visible-sm visible-xs"></div>
